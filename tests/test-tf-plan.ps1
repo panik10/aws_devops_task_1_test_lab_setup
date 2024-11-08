@@ -7,14 +7,15 @@ if (Test-Path $tfPlanPath) {
     throw "`u{1F635} Unable to find terraform plan file. Please make sure that you saved terraform execution plan to the file and try again. "
 }
 
+Write-Output "Debug step"
 # Convert execution plan to json 
 $tfPlanJsonPath = "tfPlan.json"
-try { 
+# try { 
     terraform show -json $tfPlanPath
     terraform show -json $tfPlanPath > $tfPlanJsonPath
-} catch { 
-    throw "`u{1F635} Unexpected error: unable to read terraform plan file. Please contact your course mentor. "
-}
+# } catch { 
+#     throw "`u{1F635} Unexpected error: unable to read terraform plan file. Please contact your course mentor. "
+# }
 
 $plan = (Get-Content -Path $tfPlanJsonPath | ConvertFrom-Json) 
 
