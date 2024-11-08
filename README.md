@@ -25,17 +25,23 @@ Grafana is an app for building dashboards with data from different sources. To r
 
 To complete this task: 
 1. Edit `main.tf` - uncommend the `aws_vpc` resource. VPC is an AWS resource for building private networks. 
-2. Run terraform init and plan, make sure to save your execution plan to a file, called `tfplan` in this repo. 
+
+2. Run the following commands to generage a terraform execution plan in json format: 
     ```
     terraform init
     terraform plan -out=tfplan
+    terraform show -json tfplan > tfplan.json
     ```
-3. Run automated test to check yourself
+
+3. Run automated test to check yourself. 
     ```
     pwsh ./tests/test-tf-plan.ps1
     ```
+If any test fails - please check your task code and repeat step 2 to generage a new tfplan.json file. 
+
 4. Deploy infrastructure using terraform apply 
     ```
     terraform apply
     ```
-5. Submit your solution for a review. 
+
+5. Commit file `tfplan.json` and submit your solution for a review. 
