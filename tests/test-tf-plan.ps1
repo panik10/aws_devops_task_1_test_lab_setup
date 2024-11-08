@@ -10,12 +10,16 @@ if (Test-Path $tfPlanPath) {
 # Convert execution plan to json 
 $tfPlanJsonPath = "tfPlan.json"
 try { 
+    terraform show -json $tfPlanPath
     terraform show -json $tfPlanPath > $tfPlanJsonPath
 } catch { 
     throw "`u{1F635} Unexpected error: unable to read terraform plan file. Please contact your course mentor. "
 }
 
 $plan = (Get-Content -Path $tfPlanJsonPath | ConvertFrom-Json) 
+
+Get-Content -Path $tfPlanJsonPath 
+$plan 
 
 $vpc = $plan.resource_changes | Where-Object {$_.type -eq "aws_vpc"}
 if ($vpc -and ($vpc.Count -eq 1 )) { 
