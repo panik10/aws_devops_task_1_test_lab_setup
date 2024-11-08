@@ -26,7 +26,7 @@ Grafana is an app for building dashboards with data from different sources. To r
 To complete this task: 
 1. Edit `main.tf` - uncommend the `aws_vpc` resource. VPC is an AWS resource for building private networks. 
 
-2. Run the following commands to generage a terraform execution plan in json format: 
+2. Run the following commands to generage a terraform execution plan in **json** format: 
     ```
     terraform init
     terraform plan -out=tfplan
