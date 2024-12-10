@@ -1,6 +1,8 @@
 # AWS Essentials: Test lab setup
 
-Welcome to AWS Essentials! This is a first task in series to help you learn AWS. In this task series you will deploy your very own instance of [Grafana](https://grafana.com/), configure it, and use it to monitor your cloud infrastructure! 
+Welcome to AWS Essentials! This is a first task in series to help you learn AWS. 
+
+It is easier to get familiar with cloud by solving real-life tasks, so in this task series you will deploy your very own instance of [Grafana](https://grafana.com/), configure it, and use it to monitor your cloud infrastructure! Grafana is a tool for building dashboards, mostly used for the infrastructure monitoring. 
 
 ## Prerequirements
 
