@@ -52,4 +52,6 @@ If any test fails - please check your task code and repeat step 2 to generage a 
     terraform apply
     ```
 
+    Make sure to collect module outputs - we will use those values in the next tasks. 
+
 5. Commit file `tfplan.json` and submit your solution for review. 
